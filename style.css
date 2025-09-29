@@ -1,0 +1,116 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #111;   /* خلفية عامة سوداء */
+    color: #eee;             /* النصوص فاتحة */
+    line-height: 1.6;
+}
+
+/* Sections */
+section {
+    padding: 70px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+}
+
+/* Cover */
+#cover {
+    background: linear-gradient(to right, #000000, #434343); /* أسود + رمادي */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#cover h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+#cover p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+/* Titles */
+h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #f4f4f4;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+}
+ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background: #222;
+    border-radius: 5px;
+}
+
+/* Skills */
+#skills ul li {
+    display: inline-block;
+    margin: 8px;
+    padding: 10px 20px;
+    background: #444;
+    color: #fff;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+#skills ul li:hover {
+    background: #f39c12; /* لون برتقالي عند hover */
+}
+
+/* Projects */
+.project {
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    background: #1c1c1c;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #f39c12;
+    text-decoration: none;
+    font-weight: bold;
+}
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Call to Action */
+#cta {
+    background: #222;
+    padding: 50px 20px;
+}
+#cta a {
+    color: #f39c12;
+    font-weight: bold;
+    text-decoration: none;
+}
+#cta a:hover {
+    text-decoration: underline;
+}
+
+/* Thank You */
+#thankyou {
+    background: #000;
+    color: #f39c12;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+}
