@@ -24,7 +24,6 @@
             overflow-x: hidden;
         }
 
-        /* Hero Section */
         .hero { 
             height: 100vh; 
             background: linear-gradient(rgba(13, 17, 23, 0.6), rgba(13, 17, 23, 0.9)), 
@@ -47,9 +46,8 @@
         }
         .hero .subtitle { font-size: 1.8rem; color: var(--secondary); font-weight: 700; margin: 10px 0; }
 
-        /* Global Container & Spacing */
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        section { margin-bottom: 100px; } /* مسافة كبيرة بين السيكشنز */
+        section { margin-bottom: 100px; }
 
         .section-title { 
             font-family: 'Orbitron', sans-serif; 
@@ -61,7 +59,6 @@
             padding-left: 15px;
         }
 
-        /* Cards */
         .card { 
             background: var(--card-bg); 
             border: 1px solid #30363d; 
@@ -73,8 +70,8 @@
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .card h3 { color: #f0f6fc; margin-bottom: 10px; }
         .card .date { color: var(--secondary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
+        .card .description { font-size: 1rem; color: #8b949e; margin-bottom: 15px; }
 
-        /* Skills */
         .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
         .skill-tag { 
             background: rgba(0, 212, 255, 0.1); 
@@ -86,7 +83,6 @@
             font-size: 0.9rem;
         }
 
-        /* Buttons */
         .btn { 
             display: inline-block; 
             padding: 12px 30px; 
@@ -99,18 +95,15 @@
             font-size: 0.8rem;
         }
         .btn-primary { background: var(--primary); color: var(--bg-dark); box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3); }
-        .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 15px; }
+        .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 10px; }
         .btn:hover { opacity: 0.9; transform: scale(1.05); }
 
-        /* Form */
         .contact-form input, .contact-form textarea { 
             width: 100%; padding: 15px; margin-bottom: 15px; 
             background: #0d1117; border: 1px solid #30363d; 
             color: #fff; border-radius: 8px; font-family: inherit;
         }
-        .contact-form input:focus { border-color: var(--primary); outline: none; }
 
-        /* Footer */
         footer { text-align: center; padding: 60px 20px; background: #010409; }
         .social-links { margin-bottom: 20px; }
         .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; transition: 0.3s; }
@@ -134,42 +127,24 @@
             </div>
         </section>
 
-        <section id="skills">
-            <h2 class="section-title">Technical Skills & Tools</h2>
-            <div class="card">
-                <h4 style="margin-bottom:15px; color: var(--text-gray);">Core Expertise</h4>
-                <div class="skills-grid">
-                    <span class="skill-tag">Networking (TCP/IP, DNS)</span>
-                    <span class="skill-tag">Linux/Windows Security</span>
-                    <span class="skill-tag">Log Analysis</span>
-                    <span class="skill-tag">Incident Response</span>
-                </div>
-                <h4 style="margin:20px 0 15px; color: var(--text-gray);">Tools</h4>
-                <div class="skills-grid">
-                    <span class="skill-tag">Wireshark</span>
-                    <span class="skill-tag">Nmap</span>
-                    <span class="skill-tag">Splunk</span>
-                    <span class="skill-tag">VirusTotal</span>
-                </div>
-            </div>
-        </section>
-
         <section id="experience">
             <h2 class="section-title">Professional Experience</h2>
             <div class="card">
                 <h3>Bapetco</h3>
                 <span class="date">Sep 2024 - Oct 2024 • Internship</span>
-                <p>Collaborated with IT teams to enhance problem-solving workflows and technical infrastructure.</p>
+                <p class="description">Gained valuable insights from experienced engineers, enhancing technical knowledge and problem-solving skills.</p>
                 <a href="Bapetco.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
                 <h3>Smart Digital Services</h3>
                 <span class="date">Aug 2024 - Sep 2024 • Internship</span>
+                <p class="description">Learned from the expertise of engineers, strengthening technical knowledge and problem-solving capabilities.</p>
                 <a href="Smart Digital Services.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
                 <h3>GASTEC</h3>
                 <span class="date">Sep 2023 - Oct 2023 • Internship</span>
+                <p class="description">Collaborated with experienced engineers, gaining hands-on exposure that expanded technical expertise and improved problem-solving abilities.</p>
                 <a href="GASTEC.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
         </section>
@@ -177,8 +152,8 @@
         <section id="certs">
             <h2 class="section-title">Certifications</h2>
             <div class="card">
-                <h3 style="margin:0;">Cyber Security Incident Response Analyst <span style="color:var(--text-gray); font-size:0.8rem; font-weight:normal;">| DEPI</span></h3>
-                <a href="DEPI.pdf" target="_blank" class="btn btn-outline" style="margin-top:15px;">View Certificate (PDF)</a>
+                <h3 style="margin:0;">Cyber Security Incident Response Analyst | <span style="font-weight: normal;">DEPI</span></h3>
+                <a href="DEPI.pdf" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
                 <h3>ITIDA Gigs Freelancing Program</h3>
@@ -196,7 +171,7 @@
                 <form class="contact-form" action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
                     <input type="text" name="data[name]" placeholder="Your Name" required>
                     <input type="email" name="data[email]" placeholder="Your Email" required>
-                    <textarea name="data[message]" rows="5" placeholder="Let's talk about opportunities..." required></textarea>
+                    <textarea name="data[message]" rows="5" placeholder="Your Message..." required></textarea>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">SEND SECURE MESSAGE</button>
                 </form>
             </div>
