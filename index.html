@@ -3,42 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Sherif | Portfolio</title>
+    <title>Mohamed Sherif | Cyber Security Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Courier New', Courier, monospace; background: #000; color: #fff; overflow-x: hidden; }
+        :root { --primary: #00d4ff; --secondary: #3fb950; --dark: #06090f; --accent: #ff003c; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--dark); color: #c9d1d9; font-family: 'Rajdhani', sans-serif; line-height: 1.6; overflow-x: hidden; }
         
-        /* Hero Section */
+        /* Cyber Background Effect */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070'); /* خلفية سايبر احترافية */
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            border-bottom: 2px solid #00ff00;
+            background: linear-gradient(rgba(6, 9, 15, 0.8), rgba(6, 9, 15, 0.9)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
+            border-bottom: 2px solid var(--primary); box-shadow: 0 0 50px rgba(0, 212, 255, 0.2);
         }
 
-        .hero h1 { font-size: 3.5rem; color: #00d4ff; text-shadow: 0 0 10px #00d4ff; margin-bottom: 10px; }
-        .hero p { font-size: 1.5rem; color: #3fb950; letter-spacing: 2px; }
-        
-        /* تأثير الـ Terminal */
-        .typing { border-right: 2px solid #00ff00; white-space: nowrap; overflow: hidden; animation: typing 3.5s steps(40, end), blink .75s step-end infinite; }
+        .glitch-name { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); color: var(--primary); text-transform: uppercase; letter-spacing: 8px; position: relative; text-shadow: 0 0 15px var(--primary); }
+        .subtitle { font-size: 1.5rem; color: var(--secondary); margin-top: 15px; font-weight: bold; border-right: 3px solid; width: fit-content; animation: typing 3s steps(30), blink 0.5s infinite alternate; white-space: nowrap; overflow: hidden; }
         @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink { from, to { border-color: transparent } 50% { border-color: #00ff00 } }
+        @keyframes blink { from { border-color: transparent } to { border-color: var(--secondary) } }
+
+        .container { max-width: 1000px; margin: auto; padding: 100px 20px; }
+        .section-title { font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 40px; display: flex; align-items: center; gap: 20px; font-size: 2rem; }
+        .section-title::after { content: ""; height: 1px; flex: 1; background: rgba(0, 212, 255, 0.3); }
+
+        /* Modern Glass Cards */
+        .card { 
+            background: rgba(22, 27, 34, 0.6); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 12px; padding: 30px; 
+            margin-bottom: 25px; backdrop-filter: blur(10px); transition: 0.4s; position: relative;
+        }
+        .card:hover { border-color: var(--primary); transform: translateX(10px); box-shadow: -5px 0 20px rgba(0, 212, 255, 0.2); }
+        .card h3 { color: var(--primary); margin-bottom: 5px; }
+        .company { color: var(--secondary); font-weight: bold; display: block; margin-bottom: 10px; }
+        .date { font-size: 0.85rem; color: #8b949e; }
+
+        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
+        .skill-btn { background: rgba(0, 212, 255, 0.05); border: 1px solid var(--primary); color: var(--primary); padding: 8px 18px; border-radius: 4px; font-weight: bold; transition: 0.3s; }
+        .skill-btn:hover { background: var(--primary); color: var(--dark); }
+
+        footer { background: #010409; padding: 50px; text-align: center; border-top: 1px solid #30363d; }
+        .socials a { color: #fff; font-size: 1.8rem; margin: 0 15px; transition: 0.3s; }
+        .socials a:hover { color: var(--primary); filter: drop-shadow(0 0 10px var(--primary)); }
     </style>
 </head>
 <body>
 
-    <section class="hero">
-        <h1>MOHAMED SHERIF ISMAIL</h1>
-        <div class="typing-container">
-            <p class="typing">Junior Cybersecurity Engineer | SOC Analyst</p>
+    <header class="hero">
+        <h1 class="glitch-name">M. Sherif</h1>
+        <div class="subtitle">Junior Cybersecurity Engineer</div>
+        <p style="margin-top: 20px; letter-spacing: 2px;">Blue Team | SOC Operations | Incident Response</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2 class="section-title"><i class="fas fa-terminal"></i> Professional Experience</h2>
+            <div class="card">
+                <h3>IT Intern</h3>
+                <span class="company">Bapetco (Badr El Din Petroleum)</span>
+                <span class="date">Sep 2024 - Oct 2024</span>
+            </div>
+            <div class="card">
+                <h3>IT Intern</h3>
+                <span class="company">Smart Digital Services</span>
+                <span class="date">Aug 2024 - Sep 2024</span>
+            </div>
+            <div class="card">
+                <h3>IT Intern</h3>
+                <span class="company">GASTEC</span>
+                <span class="date">Sep 2023 - Oct 2023</span>
+            </div>
+        </section>
+
+        <section style="margin-top: 80px;">
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Certifications & Education</h2>
+            <div class="card">
+                <h3>B.Sc. Management Information Systems</h3>
+                <span class="company">Modern Academy Maadi</span>
+                <span class="date">GPA: 3.76 (Excellent with Distinction)</span>
+            </div>
+            <div class="card">
+                <h3>Cyber Security Incident Response Analyst</h3>
+                <span class="company">DEPI - Digital Egypt Pioneers Initiative</span>
+                <p>SOC Operations & Threat Monitoring focus.</p>
+            </div>
+            <div class="card">
+                <h3>Cyber Gigs Freelancing</h3>
+                <span class="company">ITIDA</span>
+                <p>Digital Skills & Industry Standards.</p>
+            </div>
+        </section>
+
+        <section style="margin-top: 80px;">
+            <h2 class="section-title"><i class="fas fa-code"></i> Tech Stack</h2>
+            <div class="skills-container">
+                <div class="skill-btn">SIEM</div>
+                <div class="skill-btn">Wireshark</div>
+                <div class="skill-btn">Nmap</div>
+                <div class="skill-btn">Log Analysis</div>
+                <div class="skill-btn">Incident Response</div>
+                <div class="skill-btn">Network Security</div>
+                <div class="skill-btn">Linux</div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="socials">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="mailto:mohamed@example.com"><i class="fas fa-envelope"></i></a>
         </div>
-    </section>
+        <p style="margin-top: 20px; font-size: 0.9rem;">&copy; 2026 Mohamed Sherif Ismail. System Secured.</p>
+    </footer>
 
 </body>
 </html>
