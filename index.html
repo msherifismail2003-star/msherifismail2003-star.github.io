@@ -30,66 +30,41 @@
                         url('https://i.postimg.cc/Cxp1J5Sk/IMG-2106.jpg'); 
             background-size: cover; 
             background-position: center; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            text-align: center; 
-            padding: 20px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
-        .hero h1 { 
-            font-family: 'Orbitron', sans-serif; 
-            font-size: clamp(2.5rem, 10vw, 5rem); 
-            color: var(--primary); 
-            text-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-            letter-spacing: 5px;
-        }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); color: var(--primary); text-shadow: 0 0 30px rgba(0, 212, 255, 0.5); letter-spacing: 5px; }
         .hero .subtitle { font-size: 1.8rem; color: var(--secondary); font-weight: 700; margin: 10px 0; }
 
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
-        section { margin-bottom: 100px; }
+        section { margin-bottom: 80px; }
 
         .section-title { 
-            font-family: 'Orbitron', sans-serif; 
-            color: var(--primary); 
-            margin-bottom: 40px; 
-            font-size: 1.5rem; 
-            text-transform: uppercase;
-            border-left: 4px solid var(--primary);
-            padding-left: 15px;
+            font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 40px; font-size: 1.5rem; text-transform: uppercase;
+            border-left: 4px solid var(--primary); padding-left: 15px;
         }
 
-        .card { 
-            background: var(--card-bg); 
-            border: 1px solid #30363d; 
-            border-radius: 12px; 
-            padding: 30px; 
-            margin-bottom: 25px; 
-            transition: 0.3s ease;
-        }
+        .card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-bottom: 25px; transition: 0.3s ease; }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .card h3 { color: #f0f6fc; margin-bottom: 10px; }
         .card .date { color: var(--secondary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
-        .card .description { font-size: 1rem; color: #8b949e; margin-bottom: 15px; }
+        
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .skill-tag { 
+            background: rgba(0, 212, 255, 0.1); color: var(--primary); padding: 6px 15px; border-radius: 6px; 
+            font-weight: 600; border: 1px solid rgba(0, 212, 255, 0.3); font-size: 0.9rem;
+        }
 
         .btn { 
-            display: inline-block; 
-            padding: 12px 30px; 
-            border-radius: 6px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            transition: 0.3s; 
-            cursor: pointer; 
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
+            display: inline-block; padding: 12px 30px; border-radius: 6px; text-decoration: none; font-weight: bold; 
+            transition: 0.3s; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 0.8rem;
         }
-        .btn-primary { background: var(--primary); color: var(--bg-dark); box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3); }
-        .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 10px; }
-        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+        .btn-primary { background: var(--primary); color: var(--bg-dark); }
+        .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 15px; }
 
-        footer { text-align: center; padding: 60px 20px; background: #010409; }
-        .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; transition: 0.3s; }
-        .social-links a:hover { color: var(--primary); }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #0d1117; border: 1px solid #30363d; color: #fff; border-radius: 8px; }
+        
+        footer { text-align: center; padding: 40px; background: #010409; }
+        .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; }
     </style>
 </head>
 <body>
@@ -97,29 +72,59 @@
     <section class="hero">
         <h1>MOHAMED SHERIF</h1>
         <div class="subtitle">Junior Cybersecurity Engineer</div>
-        <p style="letter-spacing: 2px;">SOC Analyst | Blue Team | Threat Hunting</p>
+        <p>SOC Analyst | Blue Team | Threat Hunting</p>
         <a href="Mohamed_Sherif_CV.pdf" target="_blank" class="btn btn-primary" style="margin-top: 30px;">DOWNLOAD CV</a>
     </section>
 
     <div class="container">
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="card">
+                <p>Junior Cybersecurity Engineer with a solid foundation in Blue Team operations, SOC monitoring, SIEM platforms, incident detection, and threat analysis.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="card">
+                <h3 style="color: var(--primary);"><i class="fas fa-microchip"></i> Technical Skills</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Networking Fundamentals (TCP/IP, DNS, HTTP)</span>
+                    <span class="skill-tag">Linux Basics</span>
+                    <span class="skill-tag">Windows Fundamentals</span>
+                    <span class="skill-tag">Security Fundamentals</span>
+                    <span class="skill-tag">Log Analysis Basics</span>
+                    <span class="skill-tag">Incident Response Basics</span>
+                </div>
+                <h3 style="color: var(--secondary); margin-top: 25px;"><i class="fas fa-tools"></i> Tools (Beginner Level)</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Wireshark</span>
+                    <span class="skill-tag">Nmap</span>
+                    <span class="skill-tag">Splunk (Basic)</span>
+                    <span class="skill-tag">VirusTotal</span>
+                    <span class="skill-tag">TryHackMe Labs</span>
+                </div>
+            </div>
+        </section>
+
         <section id="experience">
             <h2 class="section-title">Professional Experience</h2>
             <div class="card">
                 <h3>Bapetco</h3>
                 <span class="date">Sep 2024 - Oct 2024 • Internship</span>
-                <p class="description">Gained valuable insights from experienced engineers, enhancing technical knowledge and problem-solving skills.</p>
+                <p>Gained valuable insights from experienced engineers, enhancing technical knowledge and problem-solving skills.</p>
                 <a href="Bapetco.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
                 <h3>Smart Digital Services</h3>
                 <span class="date">Aug 2024 - Sep 2024 • Internship</span>
-                <p class="description">Learned from the expertise of engineers, strengthening technical knowledge and problem-solving capabilities.</p>
+                <p>Learned from the expertise of engineers, strengthening technical knowledge and problem-solving capabilities.</p>
                 <a href="Smart Digital Services.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
                 <h3>GASTEC</h3>
                 <span class="date">Sep 2023 - Oct 2023 • Internship</span>
-                <p class="description">Collaborated with experienced engineers, gaining hands-on exposure that expanded technical expertise and improved problem-solving abilities.</p>
+                <p>Collaborated with experienced engineers, gaining hands-on exposure that expanded technical expertise and improved problem-solving abilities.</p>
                 <a href="GASTEC.png" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
         </section>
@@ -127,10 +132,30 @@
         <section id="certs">
             <h2 class="section-title">Certifications</h2>
             <div class="card">
-                <h3 style="margin:0;">Cyber Security Incident Response Analyst | <span style="font-weight: normal;">DEPI</span></h3>
+                <h3>Cyber Security Incident Response Analyst | DEPI</h3>
                 <a href="DEPI.pdf" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
-            </section>
+            <div class="card">
+                <h3>ITIDA Gigs Freelancing Program</h3>
+                <a href="ITIDA.png" target="_blank" class="btn btn-outline">View Certificate</a>
+            </div>
+            <div class="card">
+                <h3>Cyber Security Course - GDG</h3>
+                <a href="GDG.png" target="_blank" class="btn btn-outline">View Certificate</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="card">
+                <form action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
+                    <input type="text" name="data[name]" placeholder="Your Name" required>
+                    <input type="email" name="data[email]" placeholder="Your Email" required>
+                    <textarea name="data[message]" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
+                </form>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -139,6 +164,7 @@
             <a href="https://github.com/msherifismail2003-star" target="_blank"><i class="fab fa-github"></i></a>
             <a href="mailto:M.sherifismail2003@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--text-gray);">Designed by Mohamed Sherif Ismail | Cairo, Egypt</p>
     </footer>
 
 </body>
