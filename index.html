@@ -3,120 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Sherif | Cyber Security Portfolio</title>
+    <title>Mohamed Sherif | Cybersecurity Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00d4ff; --secondary: #3fb950; --dark: #06090f; --accent: #ff003c; }
+        :root {
+            --primary: #00d4ff;
+            --secondary: #3fb950;
+            --bg-dark: #06090f;
+            --glass: rgba(10, 11, 16, 0.85);
+            --border-glow: rgba(0, 212, 255, 0.3);
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { background: var(--dark); color: #c9d1d9; font-family: 'Rajdhani', sans-serif; line-height: 1.6; overflow-x: hidden; }
-        
-        /* Cyber Background Effect */
+        body { background: var(--bg-dark); color: #e0e6ed; font-family: 'Rajdhani', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
+
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(6, 9, 15, 0.8), rgba(6, 9, 15, 0.9)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.9)),
+                        url('https://i.postimg.cc/Cxp1J5Sk/IMG-2106.jpg');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-            border-bottom: 2px solid var(--primary); box-shadow: 0 0 50px rgba(0, 212, 255, 0.2);
+            border-bottom: 3px solid var(--primary);
         }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 8vw, 4.5rem); color: var(--primary); text-shadow: 0 0 20px var(--primary); text-transform: uppercase; letter-spacing: 5px; }
+        .hero p { font-size: 1.5rem; color: var(--secondary); font-weight: bold; margin-top: 10px; }
 
-        .glitch-name { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); color: var(--primary); text-transform: uppercase; letter-spacing: 8px; position: relative; text-shadow: 0 0 15px var(--primary); }
-        .subtitle { font-size: 1.5rem; color: var(--secondary); margin-top: 15px; font-weight: bold; border-right: 3px solid; width: fit-content; animation: typing 3s steps(30), blink 0.5s infinite alternate; white-space: nowrap; overflow: hidden; }
-        @keyframes typing { from { width: 0 } to { width: 100% } }
-        @keyframes blink { from { border-color: transparent } to { border-color: var(--secondary) } }
+        .container { max-width: 1100px; margin: auto; padding: 80px 20px; }
+        .section-title { font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 50px; text-align: center; font-size: 2rem; }
 
-        .container { max-width: 1000px; margin: auto; padding: 100px 20px; }
-        .section-title { font-family: 'Orbitron', sans-serif; color: var(--primary); margin-bottom: 40px; display: flex; align-items: center; gap: 20px; font-size: 2rem; }
-        .section-title::after { content: ""; height: 1px; flex: 1; background: rgba(0, 212, 255, 0.3); }
-
-        /* Modern Glass Cards */
         .card { 
-            background: rgba(22, 27, 34, 0.6); border: 1px solid rgba(0, 212, 255, 0.1); border-radius: 12px; padding: 30px; 
-            margin-bottom: 25px; backdrop-filter: blur(10px); transition: 0.4s; position: relative;
+            background: var(--glass); border: 1px solid var(--border-glow); border-radius: 15px; 
+            padding: 35px; margin-bottom: 30px; backdrop-filter: blur(12px); transition: 0.4s;
         }
-        .card:hover { border-color: var(--primary); transform: translateX(10px); box-shadow: -5px 0 20px rgba(0, 212, 255, 0.2); }
-        .card h3 { color: var(--primary); margin-bottom: 5px; }
-        .company { color: var(--secondary); font-weight: bold; display: block; margin-bottom: 10px; }
-        .date { font-size: 0.85rem; color: #8b949e; }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 0 25px var(--border-glow); }
 
-        .skills-container { display: flex; flex-wrap: wrap; gap: 12px; }
-        .skill-btn { background: rgba(0, 212, 255, 0.05); border: 1px solid var(--primary); color: var(--primary); padding: 8px 18px; border-radius: 4px; font-weight: bold; transition: 0.3s; }
-        .skill-btn:hover { background: var(--primary); color: var(--dark); }
+        .contact-form { display: grid; gap: 20px; max-width: 700px; margin: auto; }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glow); border-radius: 8px; color: #fff; font-family: inherit;
+        }
+        .contact-form button {
+            background: var(--primary); color: var(--bg-dark); padding: 15px; border: none;
+            border-radius: 8px; font-weight: bold; font-family: 'Orbitron', sans-serif; cursor: pointer; transition: 0.3s;
+        }
+        .contact-form button:hover { background: var(--secondary); box-shadow: 0 0 15px var(--secondary); }
 
-        footer { background: #010409; padding: 50px; text-align: center; border-top: 1px solid #30363d; }
-        .socials a { color: #fff; font-size: 1.8rem; margin: 0 15px; transition: 0.3s; }
-        .socials a:hover { color: var(--primary); filter: drop-shadow(0 0 10px var(--primary)); }
+        .cv-btn {
+            display: inline-block; padding: 15px 40px; border: 2px solid var(--secondary);
+            color: var(--secondary); text-decoration: none; font-weight: bold; border-radius: 8px;
+            margin-top: 20px; transition: 0.3s;
+        }
+        .cv-btn:hover { background: var(--secondary); color: #000; box-shadow: 0 0 15px var(--secondary); }
+
+        footer { text-align: center; padding: 60px 20px; border-top: 1px solid var(--border-glow); background: #010409; }
     </style>
 </head>
 <body>
 
-    <header class="hero">
-        <h1 class="glitch-name">M. Sherif</h1>
-        <div class="subtitle">Junior Cybersecurity Engineer</div>
-        <p style="margin-top: 20px; letter-spacing: 2px;">Blue Team | SOC Operations | Incident Response</p>
-    </header>
+    <section class="hero">
+        <h1>Mohamed Sherif</h1>
+        <p>Junior Cybersecurity Engineer</p>
+        <div style="margin-top: 15px;">SOC Analyst | Blue Team | Threat Hunting</div>
+        <a href="Mohamed_Sherif_CV.pdf" target="_blank" class="cv-btn">
+            <i class="fas fa-download"></i> DOWNLOAD MY CV
+        </a>
+    </section>
 
     <div class="container">
-        <section>
-            <h2 class="section-title"><i class="fas fa-terminal"></i> Professional Experience</h2>
+        <section id="profile">
+            <h2 class="section-title">Background</h2>
             <div class="card">
-                <h3>IT Intern</h3>
-                <span class="company">Bapetco (Badr El Din Petroleum)</span>
-                <span class="date">Sep 2024 - Oct 2024</span>
+                <h3 style="color: var(--primary);">Bachelor of MIS</h3>
+                <p>Modern Academy Maadi | <b>GPA 3.76 (Excellent with Distinction)</b></p>
             </div>
             <div class="card">
-                <h3>IT Intern</h3>
-                <span class="company">Smart Digital Services</span>
-                <span class="date">Aug 2024 - Sep 2024</span>
-            </div>
-            <div class="card">
-                <h3>IT Intern</h3>
-                <span class="company">GASTEC</span>
-                <span class="date">Sep 2023 - Oct 2023</span>
+                <h3 style="color: var(--primary);">Experience</h3>
+                <p>IT Intern @ Bapetco (2024) & GASTEC (2023)</p>
             </div>
         </section>
 
-        <section style="margin-top: 80px;">
-            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Certifications & Education</h2>
+        <section id="contact">
+            <h2 class="section-title">Connect With Me</h2>
             <div class="card">
-                <h3>B.Sc. Management Information Systems</h3>
-                <span class="company">Modern Academy Maadi</span>
-                <span class="date">GPA: 3.76 (Excellent with Distinction)</span>
-            </div>
-            <div class="card">
-                <h3>Cyber Security Incident Response Analyst</h3>
-                <span class="company">DEPI - Digital Egypt Pioneers Initiative</span>
-                <p>SOC Operations & Threat Monitoring focus.</p>
-            </div>
-            <div class="card">
-                <h3>Cyber Gigs Freelancing</h3>
-                <span class="company">ITIDA</span>
-                <p>Digital Skills & Industry Standards.</p>
-            </div>
-        </section>
-
-        <section style="margin-top: 80px;">
-            <h2 class="section-title"><i class="fas fa-code"></i> Tech Stack</h2>
-            <div class="skills-container">
-                <div class="skill-btn">SIEM</div>
-                <div class="skill-btn">Wireshark</div>
-                <div class="skill-btn">Nmap</div>
-                <div class="skill-btn">Log Analysis</div>
-                <div class="skill-btn">Incident Response</div>
-                <div class="skill-btn">Network Security</div>
-                <div class="skill-btn">Linux</div>
+                <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem;">Let's discuss new opportunities or tech collaborations!</p>
+                <form class="contact-form" action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
+                    <input type="text" name="data[name]" placeholder="Full Name" required>
+                    <input type="email" name="data[email]" placeholder="Email Address" required>
+                    <textarea name="data[message]" rows="5" placeholder="Your Message" required></textarea>
+                    <button type="submit">SEND TO DATABASE</button>
+                </form>
             </div>
         </section>
     </div>
 
     <footer>
-        <div class="socials">
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="mailto:mohamed@example.com"><i class="fas fa-envelope"></i></a>
+        <div style="margin-bottom: 25px;">
+            <p><i class="fas fa-phone"></i> 01557628118 | <i class="fas fa-envelope"></i> M.sherifismail2003@gmail.com</p>
+            <p>Cairo, Egypt</p>
         </div>
-        <p style="margin-top: 20px; font-size: 0.9rem;">&copy; 2026 Mohamed Sherif Ismail. System Secured.</p>
+        <div class="socials">
+            <a href="https://linkedin.com/in/mohamed-sherif-ismail" target="_blank" style="color: var(--primary); font-size: 2rem; margin: 0 15px;"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/msherifismail2003-star" target="_blank" style="color: var(--primary); font-size: 2rem; margin: 0 15px;"><i class="fab fa-github"></i></a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.8rem; opacity: 0.5;">&copy; 2026 Mohamed Sherif Mohamed Ismail | Secured Terminal</p>
     </footer>
 
 </body>
