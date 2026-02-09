@@ -9,7 +9,7 @@
     <style>
         :root { 
             --primary: #00d4ff; 
-            --secondary: #3fb950; 
+            --secondary: #00d4ff; /* تم توحيد اللون للأزرق */
             --bg-dark: #0d1117; 
             --card-bg: rgba(22, 27, 34, 0.95);
             --text-gray: #8b949e;
@@ -33,7 +33,7 @@
             display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
         .hero h1 { font-family: 'Orbitron', sans-serif; font-size: clamp(2.5rem, 10vw, 5rem); color: var(--primary); text-shadow: 0 0 30px rgba(0, 212, 255, 0.5); letter-spacing: 5px; }
-        .hero .subtitle { font-size: 1.8rem; color: var(--secondary); font-weight: 700; margin: 10px 0; }
+        .hero .subtitle { font-size: 1.8rem; color: var(--primary); font-weight: 700; margin: 10px 0; }
 
         .container { max-width: 900px; margin: auto; padding: 40px 20px; }
         section { margin-bottom: 80px; }
@@ -46,7 +46,7 @@
         .card { background: var(--card-bg); border: 1px solid #30363d; border-radius: 12px; padding: 30px; margin-bottom: 25px; transition: 0.3s ease; }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
         .card h3 { color: #f0f6fc; margin-bottom: 10px; }
-        .card .date { color: var(--secondary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
+        .card .date { color: var(--primary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
         
         .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
         .skill-tag { 
@@ -59,12 +59,25 @@
             transition: 0.3s; cursor: pointer; font-family: 'Orbitron', sans-serif; font-size: 0.8rem;
         }
         .btn-primary { background: var(--primary); color: var(--bg-dark); }
-        .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 15px; }
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); margin-top: 15px; }
+        .btn-outline:hover { background: rgba(0, 212, 255, 0.1); }
 
-        .contact-form input, .contact-form textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #0d1117; border: 1px solid #30363d; color: #fff; border-radius: 8px; }
+        /* تعديل فورم التواصل ليكون متناسقاً */
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .contact-form .input-group { display: flex; gap: 15px; }
+        .contact-form input, .contact-form textarea { 
+            width: 100%; padding: 15px; background: #0d1117; 
+            border: 1px solid #30363d; color: #fff; border-radius: 8px; 
+            font-family: 'Rajdhani', sans-serif; font-size: 1rem;
+        }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); outline: none; }
         
-        footer { text-align: center; padding: 40px; background: #010409; }
-        .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; }
+        footer { text-align: center; padding: 40px; background: #010409; border-top: 1px solid #30363d; }
+        .social-links { margin-bottom: 20px; }
+        .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; transition: 0.3s; }
+        .social-links a:hover { color: var(--primary); }
+
+        @media (max-width: 600px) { .contact-form .input-group { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -96,7 +109,7 @@
                     <span class="skill-tag">Log Analysis Basics</span>
                     <span class="skill-tag">Incident Response Basics</span>
                 </div>
-                <h3 style="color: var(--secondary); margin-top: 25px;"><i class="fas fa-tools"></i> Tools (Beginner Level)</h3>
+                <h3 style="color: var(--primary); margin-top: 25px;"><i class="fas fa-tools"></i> Tools (Beginner Level)</h3>
                 <div class="skills-grid">
                     <span class="skill-tag">Wireshark</span>
                     <span class="skill-tag">Nmap</span>
@@ -132,7 +145,7 @@
         <section id="certs">
             <h2 class="section-title">Certifications</h2>
             <div class="card">
-                <h3>Cyber Security Incident Response Analyst | DEPI</h3>
+                <h3>Cyber Security Incident Response Analyst | <span style="font-weight: normal;">DEPI</span></h3>
                 <a href="DEPI.pdf" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
             <div class="card">
@@ -148,9 +161,11 @@
         <section id="contact">
             <h2 class="section-title">Connect With Me</h2>
             <div class="card">
-                <form action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
-                    <input type="text" name="data[name]" placeholder="Your Name" required>
-                    <input type="email" name="data[email]" placeholder="Your Email" required>
+                <form class="contact-form" action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
+                    <div class="input-group">
+                        <input type="text" name="data[name]" placeholder="Your Name" required>
+                        <input type="email" name="data[email]" placeholder="Your Email" required>
+                    </div>
                     <textarea name="data[message]" rows="5" placeholder="Your Message" required></textarea>
                     <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
                 </form>
