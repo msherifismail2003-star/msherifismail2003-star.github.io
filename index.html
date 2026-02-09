@@ -72,17 +72,6 @@
         .card .date { color: var(--secondary); font-size: 0.9rem; font-weight: bold; margin-bottom: 10px; display: block; }
         .card .description { font-size: 1rem; color: #8b949e; margin-bottom: 15px; }
 
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-        .skill-tag { 
-            background: rgba(0, 212, 255, 0.1); 
-            color: var(--primary); 
-            padding: 6px 15px; 
-            border-radius: 6px; 
-            font-weight: 600; 
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            font-size: 0.9rem;
-        }
-
         .btn { 
             display: inline-block; 
             padding: 12px 30px; 
@@ -98,14 +87,7 @@
         .btn-outline { border: 1px solid var(--secondary); color: var(--secondary); margin-top: 10px; }
         .btn:hover { opacity: 0.9; transform: scale(1.05); }
 
-        .contact-form input, .contact-form textarea { 
-            width: 100%; padding: 15px; margin-bottom: 15px; 
-            background: #0d1117; border: 1px solid #30363d; 
-            color: #fff; border-radius: 8px; font-family: inherit;
-        }
-
         footer { text-align: center; padding: 60px 20px; background: #010409; }
-        .social-links { margin-bottom: 20px; }
         .social-links a { color: #8b949e; font-size: 1.8rem; margin: 0 20px; transition: 0.3s; }
         .social-links a:hover { color: var(--primary); }
     </style>
@@ -120,13 +102,6 @@
     </section>
 
     <div class="container">
-        <section id="about">
-            <h2 class="section-title">About Me</h2>
-            <div class="card">
-                <p>Junior Cybersecurity Engineer with a solid foundation in Blue Team operations, SOC monitoring, SIEM platforms, incident detection, and threat analysis. Gained practical experience through academic projects, hands-on labs, and specialized cybersecurity training, with a strong focus on incident response, network security, and threat hunting.</p>
-            </div>
-        </section>
-
         <section id="experience">
             <h2 class="section-title">Professional Experience</h2>
             <div class="card">
@@ -155,27 +130,7 @@
                 <h3 style="margin:0;">Cyber Security Incident Response Analyst | <span style="font-weight: normal;">DEPI</span></h3>
                 <a href="DEPI.pdf" target="_blank" class="btn btn-outline">View Certificate</a>
             </div>
-            <div class="card">
-                <h3>ITIDA Gigs Freelancing Program</h3>
-                <a href="ITIDA.png" target="_blank" class="btn btn-outline">View Certificate</a>
-            </div>
-            <div class="card">
-                <h3>Cyber Security Course - GDG</h3>
-                <a href="GDG.png" target="_blank" class="btn btn-outline">View Certificate</a>
-            </div>
-        </section>
-
-        <section id="contact">
-            <h2 class="section-title">Connect With Me</h2>
-            <div class="card">
-                <form class="contact-form" action="https://sheetdb.io/api/v1/k7381qfteq7x9" method="POST">
-                    <input type="text" name="data[name]" placeholder="Your Name" required>
-                    <input type="email" name="data[email]" placeholder="Your Email" required>
-                    <textarea name="data[message]" rows="5" placeholder="Your Message..." required></textarea>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">SEND SECURE MESSAGE</button>
-                </form>
-            </div>
-        </section>
+            </section>
     </div>
 
     <footer>
@@ -184,7 +139,6 @@
             <a href="https://github.com/msherifismail2003-star" target="_blank"><i class="fab fa-github"></i></a>
             <a href="mailto:M.sherifismail2003@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
-        <p style="font-size: 0.9rem; color: var(--text-gray);">Designed by Mohamed Sherif | Cairo, Egypt</p>
     </footer>
 
 </body>
