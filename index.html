@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Sherif | Portfolio</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; font-family: 'Courier New', Courier, monospace; background: #000; color: #fff; overflow-x: hidden; }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070'); /* خلفية سايبر احترافية */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 2px solid #00ff00;
+        }
+
+        .hero h1 { font-size: 3.5rem; color: #00d4ff; text-shadow: 0 0 10px #00d4ff; margin-bottom: 10px; }
+        .hero p { font-size: 1.5rem; color: #3fb950; letter-spacing: 2px; }
+        
+        /* تأثير الـ Terminal */
+        .typing { border-right: 2px solid #00ff00; white-space: nowrap; overflow: hidden; animation: typing 3.5s steps(40, end), blink .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { from, to { border-color: transparent } 50% { border-color: #00ff00 } }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>MOHAMED SHERIF ISMAIL</h1>
+        <div class="typing-container">
+            <p class="typing">Junior Cybersecurity Engineer | SOC Analyst</p>
+        </div>
+    </section>
+
+</body>
+</html>
